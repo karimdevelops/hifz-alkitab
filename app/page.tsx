@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="flex items-center md:p-10 p-5 flex-col min-h-[90vh]">
-      <h1 className="text-primary text-5xl font-bold font-noto-arabic">حفظ</h1>
+    <div className="flex min-h-[90vh] flex-col items-center p-5 md:p-10">
+      <h1 className="text-primary font-noto-arabic text-5xl font-bold">حفظ</h1>
     </div>
   );
 }
