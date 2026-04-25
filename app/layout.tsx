@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +17,20 @@ const notoArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
 });
 
+const kitabFont = localFont({
+  src: [
+    {
+      path: "./fonts/Kitab-Bold.ttf",
+      weight: "700",
+    },
+    {
+      path: "./fonts/Kitab-Regular.ttf",
+      weight: "400",
+    },
+  ],
+  variable: "--font-kitab",
+});
+
 export const metadata: Metadata = {
   title: "Hifz Al-Kitab",
   description: "Quran memorization with translation in multiple languages.",
@@ -29,9 +44,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${kitabFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }

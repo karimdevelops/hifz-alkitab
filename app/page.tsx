@@ -20,8 +20,8 @@ export default async function Home() {
                   <h3 className="text-lg font-semibold">{chap.surahName}</h3>
                   <p className="text-sm">{chap.surahNameTranslation}</p>
                 </div>
-                <div className="font-noto-arabic ml-auto items-end">
-                  <h3 className="text-lg font-semibold">
+                <div className="ml-auto items-end">
+                  <h3 className="font-kitab text-xl font-bold">
                     {chap.surahNameArabic}
                   </h3>
                   <p className="text-sm">{chap.totalAyah} Ayahs</p>
