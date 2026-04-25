@@ -1,4 +1,4 @@
-import { Chapter } from "@/lib/definitions";
+import { Chapter } from "@/app/lib/definitions";
 
 export async function fetchChapters(): Promise<Chapter[]> {
   try {

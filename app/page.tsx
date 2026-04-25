@@ -1,4 +1,4 @@
-import { fetchChapters } from "@/lib/data";
+import { fetchChapters } from "@/app/lib/data";
 import { Suspense } from "react";
 
 export default async function Home() {
