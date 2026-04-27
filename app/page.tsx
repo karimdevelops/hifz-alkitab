@@ -3,6 +3,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const chaps = await fetchChapters();
+
   return (
     <div className="flex min-h-[90vh] flex-col gap-10 p-5 md:p-10">
       <h1 className="text-primary font-noto-arabic self-center text-4xl font-bold">
@@ -17,14 +18,12 @@ export default async function Home() {
                   <p className="font-bold">{i + 1}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">{chap.surahName}</h3>
-                  <p className="text-sm">{chap.surahNameTranslation}</p>
+                  <h3 className="text-lg font-semibold">{chap.englishName}</h3>
+                  <p className="text-sm">{chap.englishNameTranslation}</p>
                 </div>
                 <div className="ml-auto items-end">
-                  <h3 className="font-kitab text-xl font-bold">
-                    {chap.surahNameArabic}
-                  </h3>
-                  <p className="text-sm">{chap.totalAyah} Ayahs</p>
+                  <h3 className="font-kitab text-xl font-bold">{chap.name}</h3>
+                  <p className="text-sm">{chap.numberOfAyahs} Ayahs</p>
                 </div>
               </div>
             </li>

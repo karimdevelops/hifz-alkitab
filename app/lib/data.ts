@@ -9,7 +9,15 @@ export async function fetchChapters(): Promise<Chapter[]> {
 
     const allChaps = await fetch(CHAPTERS_API_URL);
     const chapsData = await allChaps.json();
-    return chapsData;
+    const fChapsData = chapsData.data.map((chap: Chapter) => {
+      return {
+        name: chap.name.replace("سورة", ""),
+        englishName: chap.englishName,
+        englishNameTranslation: chap.englishNameTranslation,
+        numberOfAyahs: chap.numberOfAyahs,
+      };
+    });
+    return fChapsData;
   } catch (e) {
     console.log("API error", e);
     return [];

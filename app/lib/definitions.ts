@@ -1,8 +1,8 @@
 export interface Chapter {
-  surahName: string;
-  surahNameArabic: string;
-  surahNameArabicLong: string;
-  surahNameTranslation: string;
+  number: number;
+  name: string;
+  englishName: string;
+  englishNameTranslation: string;
   revelationPlace: string;
-  totalAyah: number;
+  numberOfAyahs: number;
 }
