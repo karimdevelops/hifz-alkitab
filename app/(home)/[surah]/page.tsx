@@ -1,7 +1,21 @@
-import { fetchChapters } from "@/app/lib/data";
+import { fetchChapters, fetchChaptersReveal } from "@/app/lib/data";
+import { redirect } from "next/navigation";
 
-export default async function Home() {
-  const chaps = await fetchChapters();
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ surah: string }>;
+}) {
+  let chaps;
+  const { surah } = await params;
+
+  if (surah == "reveal-order") {
+    chaps = await fetchChaptersReveal();
+  } else if (surah == "surah") {
+    chaps = await fetchChapters();
+  } else {
+    redirect("/surah");
+  }
 
   return (
     <div>
