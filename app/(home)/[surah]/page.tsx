@@ -1,5 +1,5 @@
 import ChapterLink from "@/app/(home)/_components/ChapterLink";
-import { fetchChapters, fetchChaptersReveal } from "@/app/lib/data";
+import { fetchChapters } from "@/app/lib/data";
 import { redirect } from "next/navigation";
 
 export default async function Home({
@@ -11,9 +11,9 @@ export default async function Home({
   const { surah } = await params;
 
   if (surah == "reveal-order") {
-    chaps = await fetchChaptersReveal();
+    chaps = await fetchChapters(true);
   } else if (surah == "surah") {
-    chaps = await fetchChapters();
+    chaps = await fetchChapters(false);
   } else {
     redirect("/surah");
   }
