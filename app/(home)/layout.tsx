@@ -7,7 +7,7 @@ export default function HomeLayout({
 }>) {
   return (
     <div className="flex min-h-[90vh] flex-col gap-10 p-5 md:p-10">
-      <h1 className="text-primary font-noto-arabic self-center text-4xl font-bold">
+      <h1 className="text-app-primary font-noto-arabic self-center text-4xl font-bold">
         حفظ
       </h1>
       <ul className="flex justify-center gap-5">

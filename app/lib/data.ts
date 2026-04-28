@@ -2,6 +2,7 @@ import { Chapter } from "@/app/lib/definitions";
 
 export async function fetchChapters(): Promise<Chapter[]> {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 500));
     const { CHAPTERS_API_URL } = process.env;
 
     if (!CHAPTERS_API_URL)
@@ -26,7 +27,7 @@ export async function fetchChapters(): Promise<Chapter[]> {
 
 export async function fetchChaptersReveal(): Promise<Chapter[]> {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     const { CHAPTERS_REVEAL_API_URL } = process.env;
 
