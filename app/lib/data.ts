@@ -13,6 +13,7 @@ export async function fetchChapters(): Promise<Chapter[]> {
     const fChapsData = chapsData.data.map((chap: Chapter) => {
       return {
         name: chap.name.replace("سورة", ""),
+        number: chap.number,
         englishName: chap.englishName,
         englishNameTranslation: chap.englishNameTranslation,
         numberOfAyahs: chap.numberOfAyahs,
@@ -39,6 +40,7 @@ export async function fetchChaptersReveal(): Promise<Chapter[]> {
     const fChapsData = chapsData.data.map((chap: Chapter) => {
       return {
         name: chap.name.replace("سورة", ""),
+        number: chap.number,
         englishName: chap.englishName,
         englishNameTranslation: chap.englishNameTranslation,
         numberOfAyahs: chap.numberOfAyahs,
