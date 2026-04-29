@@ -17,10 +17,12 @@ export default async function Home({
   cacheLife("max");
 
   let chaps;
+  let reveal: boolean;
   const { surah } = await params;
 
   if (surah == "reveal-order") {
     chaps = await fetchChapters(true);
+    reveal = true;
   } else if (surah == "surah") {
     chaps = await fetchChapters(false);
   } else {
@@ -29,9 +31,9 @@ export default async function Home({
 
   return (
     <ul className="flex flex-col gap-5">
-      {chaps.map((chap) => (
+      {chaps.map((chap, i: number) => (
         <li key={chap.number}>
-          <ChapterLink chap={chap} />
+          <ChapterLink i={i} reveal={reveal} chap={chap} />
         </li>
       ))}
     </ul>
