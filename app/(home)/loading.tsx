@@ -1,14 +1,5 @@
-import { Skeleton } from "@/components/ui/skeleton";
+import ChapterSkeleton from "@/app/(home)/_components/ChapterSkeleton";
 
 export default function Loading() {
-  return (
-    <div className="flex flex-col gap-5">
-      <Skeleton className="size-20 w-full rounded-xl" />
-      <Skeleton className="size-20 w-full rounded-xl" />
-      <Skeleton className="size-20 w-full rounded-xl" />
-      <Skeleton className="size-20 w-full rounded-xl" />
-      <Skeleton className="size-20 w-full rounded-xl" />
-      <Skeleton className="size-20 w-full rounded-xl" />
-    </div>
-  );
+  return <ChapterSkeleton />;
 }
