@@ -5,16 +5,14 @@ import { fetchChapters } from "@/app/lib/data";
 import { cacheLife } from "next/cache";
 import { redirect } from "next/navigation";
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ surah: string }>;
-}) {
+export async function generateStaticParams() {
+  return [{ surah: "surah" }, { surah: "reveal-order" }];
+}
+
+export default async function Home({ surah }: { surah: string }) {
   cacheLife("max");
 
   let chaps;
-  const { surah } = await params;
-
   if (surah == "reveal-order") {
     chaps = await fetchChapters(true);
   } else if (surah == "surah") {
