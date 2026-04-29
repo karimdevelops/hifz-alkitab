@@ -2,8 +2,6 @@ import { Chapter } from "@/app/lib/definitions";
 
 export async function fetchChapters(reveal: boolean): Promise<Chapter[]> {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
     let allChaps;
     const { CHAPTERS_API_URL } = process.env;
     const { CHAPTERS_REVEAL_API_URL } = process.env;
@@ -13,7 +11,9 @@ export async function fetchChapters(reveal: boolean): Promise<Chapter[]> {
 
     if (reveal) allChaps = await fetch(CHAPTERS_REVEAL_API_URL);
     else allChaps = await fetch(CHAPTERS_API_URL);
+
     const chapsData = await allChaps.json();
+
     const fChapsData = chapsData.data.map((chap: Chapter) => {
       return {
         name: chap.name.replace("سورة", ""),
@@ -23,6 +23,7 @@ export async function fetchChapters(reveal: boolean): Promise<Chapter[]> {
         numberOfAyahs: chap.numberOfAyahs,
       };
     });
+
     return fChapsData;
   } catch (e) {
     console.log("API error", e);

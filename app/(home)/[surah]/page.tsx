@@ -1,5 +1,8 @@
+"use cache";
+
 import ChapterLink from "@/app/(home)/_components/ChapterLink";
 import { fetchChapters } from "@/app/lib/data";
+import { cacheLife } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function Home({
@@ -7,6 +10,8 @@ export default async function Home({
 }: {
   params: Promise<{ surah: string }>;
 }) {
+  cacheLife("max");
+
   let chaps;
   const { surah } = await params;
 
@@ -17,16 +22,14 @@ export default async function Home({
   } else {
     redirect("/surah");
   }
-  console.log(chaps);
+
   return (
-    <div>
-      <ul className="flex flex-col gap-5">
-        {chaps.map((chap) => (
-          <li key={chap.number}>
-            <ChapterLink chap={chap} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="flex flex-col gap-5">
+      {chaps.map((chap) => (
+        <li key={chap.number}>
+          <ChapterLink chap={chap} />
+        </li>
+      ))}
+    </ul>
   );
 }
