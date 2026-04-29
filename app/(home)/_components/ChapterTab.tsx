@@ -11,12 +11,16 @@ export default function ChapterTab() {
       <li
         className={`${pathname == "/surah" ? "bg-app-primary text-app-background" : ""}`}
       >
-        <Link href={"/surah"}>Surah</Link>
+        <Link href={"/surah"} replace>
+          Surah
+        </Link>
       </li>
       <li
         className={`${pathname == "/reveal-order" ? "bg-app-primary text-app-background" : ""}`}
       >
-        <Link href={"/reveal-order"}>Revelation Order</Link>
+        <Link href={"/reveal-order"} replace>
+          Revelation Order
+        </Link>
       </li>
     </ul>
   );
