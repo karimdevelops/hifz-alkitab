@@ -9,10 +9,16 @@ export async function generateStaticParams() {
   return [{ surah: "surah" }, { surah: "reveal-order" }];
 }
 
-export default async function Home({ surah }: { surah: string }) {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ surah: string }>;
+}) {
   cacheLife("max");
 
   let chaps;
+  const { surah } = await params;
+
   if (surah == "reveal-order") {
     chaps = await fetchChapters(true);
   } else if (surah == "surah") {

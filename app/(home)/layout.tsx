@@ -1,7 +1,7 @@
 import ChapterTab from "@/app/(home)/_components/ChapterTab";
 import { Suspense } from "react";
 
-export default function HomeLayout({
+export default async function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
