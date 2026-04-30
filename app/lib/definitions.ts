@@ -12,12 +12,6 @@ export interface Ayah {
   text: string;
 }
 
-export interface Surah {
-  number: number;
-  name: string;
-  englishName: string;
-  englishNameTranslation: string;
-  revelationType: string;
-  numberOfAyahs: number;
+export interface Surah extends Chapter {
   ayahs: Ayah[];
 }
