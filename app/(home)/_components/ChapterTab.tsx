@@ -16,9 +16,9 @@ export default function ChapterTab() {
         </Link>
       </li>
       <li
-        className={`${pathname == "/reveal-order" ? "bg-app-primary text-app-background" : ""}`}
+        className={`${pathname == "/revelation-order" ? "bg-app-primary text-app-background" : ""}`}
       >
-        <Link href={"/reveal-order"} replace>
+        <Link href={"/revelation-order"} replace>
           Revelation Order
         </Link>
       </li>

@@ -20,7 +20,7 @@ export default async function Home({
   let reveal: boolean;
   const { order } = await params;
 
-  if (order == "reveal-order") {
+  if (order == "revelation-order") {
     chaps = await fetchChapters(true);
     reveal = true;
   } else if (order == "surah") {
