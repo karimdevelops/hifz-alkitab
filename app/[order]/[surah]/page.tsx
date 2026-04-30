@@ -1,10 +1,15 @@
+"use cache";
+
 import { fetchSurah } from "@/app/lib/data";
+import { cacheLife } from "next/cache";
 
 export default async function Home({
   params,
 }: {
   params: Promise<{ surah: number }>;
 }) {
+  cacheLife("max");
+
   const { surah } = await params;
   const surahData = await fetchSurah(Number(surah));
 
