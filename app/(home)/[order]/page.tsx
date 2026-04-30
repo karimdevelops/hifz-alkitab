@@ -6,24 +6,24 @@ import { cacheLife } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function generateStaticParams() {
-  return [{ surah: "surah" }, { surah: "reveal-order" }];
+  return [{ order: "surah" }, { order: "reveal-order" }];
 }
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ surah: string }>;
+  params: Promise<{ order: string }>;
 }) {
   cacheLife("max");
 
   let chaps;
   let reveal: boolean;
-  const { surah } = await params;
+  const { order } = await params;
 
-  if (surah == "reveal-order") {
+  if (order == "reveal-order") {
     chaps = await fetchChapters(true);
     reveal = true;
-  } else if (surah == "surah") {
+  } else if (order == "surah") {
     chaps = await fetchChapters(false);
   } else {
     redirect("/surah");
