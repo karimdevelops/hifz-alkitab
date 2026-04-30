@@ -1,6 +1,6 @@
 "use cache";
 
-import ChapterLink from "@/app/(home)/_components/ChapterLink";
+import ChapterLink from "@/app/[order]/(home)/_components/ChapterLink";
 import { fetchChapters } from "@/app/lib/data";
 import { cacheLife } from "next/cache";
 import { redirect } from "next/navigation";

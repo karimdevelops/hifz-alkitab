@@ -1,4 +1,4 @@
-import ChapterTab from "@/app/(home)/_components/ChapterTab";
+import ChapterTab from "@/app/[order]/(home)/_components/ChapterTab";
 import { Suspense } from "react";
 
 export default async function HomeLayout({
