@@ -14,7 +14,7 @@ export default async function Home({
         dir="rtl"
         className="font-kitab flex max-w-100 flex-wrap justify-center"
       >
-        {surahData
+        {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
               <span key={i} className="ml-5 text-3xl/20" lang="ar">
                 {ayah.text}{" "}
