@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a id="readme-top"></a>
+
+# HIFZ AL KITAB (In Progress)
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+![home](./images/home.png)
+
+Offering more than just Quran text. It aids users with memorization of the Quran by revealing words on hover or complete ayahs on click. Also, providing recitation by famous Qari and full UI customization to the user.
+
+Here's what makes it different: 
+
+- Reveal words on hover/click
+- Reveal entire ayah on click
+- Recite audio
+- UI customization available
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+Following tools were used for building this project:
+
+* [![Typescript][TS]][TS-url]
+* [![Nextjs][Next]][Next-url]
+* [![Tailwind][Tailwind]][Tailwind-url]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, then follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* pnpm
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repo
+   ```sh
+   https://github.com/karimdevelops/hifz-alkitab/
+   ```
+3. Install packages
+   ```sh
+   pnpm install
+   ```
+4. Enter necessary variables in .env
+    ```env
+    CHAPTERS_API_URL="<API LINK>"
+    CHAPTERS_REVEAL_API_URL="<API LINK>"
+    SURAH_API_URL="<API LINK>"
+   ```
 
-## Learn More
+5. Run the the project 
+    ```sh
+    pnpm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* [Misraj](https://misraj.ai/) 
+* [Quranic Universal Library](https://github.com/TarteelAI/quranic-universal-library)
+* [The Quran Project](https://github.com/The-Quran-Project/Quran-API)
 
-## Deploy on Vercel
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[TS]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff 
+[TS-url]: https://www.typescriptlang.org/
+[Next]: https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white
+[Next-url]: https://nextjs.org/
+[Tailwind]: https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
