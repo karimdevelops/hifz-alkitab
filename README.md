@@ -24,7 +24,9 @@
 
 ## About The Project
 
-![home](./images/home.png)
+<div align="center">
+    <img src="./images/home.png" height="550" width="auto">
+</div>
 
 Offering more than just Quran text. It aids users with memorization of the Quran by revealing words on hover or complete ayahs on click. Also, providing recitation by famous Qari and full UI customization to the user.
 
