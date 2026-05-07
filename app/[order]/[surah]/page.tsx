@@ -22,9 +22,10 @@ export default async function Home({
                 <p className="ml-5 text-4xl/20" lang="ar">
                   {ayah.text}
                 </p>
-                <span className="font-digital-khatt rounded-full self-stretch text-center border-2 px-2 text-sm">
+                <span className="font-digital-khatt rounded-full self-stretch text-center border-2 border-dotted px-2 text-base">
                   {ayah.numberInSurah}
                 </span>
+                <div></div>
               </div>
             ))
           : null}
