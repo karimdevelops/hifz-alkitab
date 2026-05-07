@@ -15,14 +15,21 @@ export default async function Home({
 
   return (
     <div className="flex justify-center">
-      <div dir="rtl" className="font-digital-khatt max-w-100">
+      <div dir="rtl" className="font-indopak max-w-100">
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
               <div key={i} className="flex flex-col items-center gap-5">
-                <p className="ml-5 text-4xl/20" lang="ar">
-                  {ayah.text}
+                <p className="ml-5 flex flex-wrap gap-4 text-4xl/20" lang="ar">
+                  {ayah.text.split(" ").map((word, i) => (
+                    <span
+                      key={i}
+                      className="ۖtransition border-app-foreground hover:text-app-foreground active:text-app-foreground border-b text-transparent duration-500"
+                    >
+                      {word}
+                    </span>
+                  ))}
                 </p>
-                <span className="font-digital-khatt rounded-full self-stretch text-center border-2 border-dotted px-2 text-base">
+                <span className="px-2 text-center text-base">
                   {ayah.numberInSurah}
                 </span>
                 <div></div>
