@@ -17,6 +17,11 @@ const notoArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
 });
 
+const digitalKhatt = localFont({
+  src: "./fonts/DigitalKhattIndoPak.otf",
+  variable: "--font-digital-khatt",
+});
+
 const kitabFont = localFont({
   src: [
     {
@@ -44,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${kitabFont.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${digitalKhatt.variable} ${kitabFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
