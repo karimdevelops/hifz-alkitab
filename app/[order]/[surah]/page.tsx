@@ -19,11 +19,14 @@ export default async function Home({
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
               <div key={i} className="flex flex-col items-center gap-5">
-                <p className="ml-5 flex flex-wrap gap-4 text-4xl/20" lang="ar">
+                <p
+                  className="ml-5 flex flex-wrap justify-center gap-4 text-4xl/20"
+                  lang="ar"
+                >
                   {ayah.text.split(" ").map((word, i) => (
                     <span
                       key={i}
-                      className="ۖtransition border-app-foreground active:text-app-foreground hover:text-app-foreground cursor-pointer border-b text-transparent delay-2000 hover:delay-0 active:delay-0"
+                      className="ۖtransition border-app-foreground active:text-app-foreground hover:text-app-foreground hover:border-app-primary active:border-app-primary inline-block cursor-pointer border-b text-transparent transition delay-2000 hover:-translate-y-3 hover:delay-0 active:-translate-y-3 active:delay-0"
                     >
                       {word}
                     </span>
