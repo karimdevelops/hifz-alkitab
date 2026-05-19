@@ -23,7 +23,7 @@ export default async function Home({
                   {ayah.text.split(" ").map((word, i) => (
                     <span
                       key={i}
-                      className="ۖtransition border-app-foreground hover:text-app-foreground active:text-app-foreground border-b text-transparent duration-500"
+                      className="ۖtransition border-app-foreground active:text-app-foreground hover:text-app-foreground cursor-pointer border-b text-transparent delay-4000 hover:delay-0 active:delay-0"
                     >
                       {word}
                     </span>

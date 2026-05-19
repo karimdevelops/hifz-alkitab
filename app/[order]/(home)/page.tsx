@@ -30,7 +30,7 @@ export default async function Home({
   }
 
   return (
-    <ul className="flex flex-col gap-5">
+    <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
       {chaps.map((chap, i: number) => (
         <li key={chap.number}>
           <ChapterLink i={i} reveal={reveal} chap={chap} />
