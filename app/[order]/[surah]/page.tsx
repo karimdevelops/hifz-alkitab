@@ -23,6 +23,7 @@ export default async function Home({
                   className="ml-5 flex flex-wrap justify-center gap-4 text-4xl/20"
                   lang="ar"
                 >
+                  {/*replace with animations and use on events*/}
                   {ayah.text.split(" ").map((word, i) => (
                     <span
                       key={i}
