@@ -1,6 +1,7 @@
 "use cache";
 
 import { fetchSurah } from "@/app/lib/data";
+import Word from "@/components/ui/Word";
 import { cacheLife } from "next/cache";
 
 export default async function Home({
@@ -23,14 +24,8 @@ export default async function Home({
                   className="ml-5 flex flex-wrap justify-center gap-4 text-4xl/20"
                   lang="ar"
                 >
-                  {/*replace with animations and use on events*/}
                   {ayah.text.split(" ").map((word, i) => (
-                    <span
-                      key={i}
-                      className="ۖtransition border-app-foreground active:text-app-foreground hover:text-app-foreground hover:border-app-primary active:border-app-primary inline-block cursor-pointer border-b text-transparent transition delay-2000 hover:-translate-y-3 hover:delay-0 active:-translate-y-3 active:delay-0"
-                    >
-                      {word}
-                    </span>
+                    <Word text={word} i={i} />
                   ))}
                 </p>
                 <span className="px-2 text-center text-base">
