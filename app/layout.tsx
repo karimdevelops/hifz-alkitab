@@ -27,6 +27,12 @@ const indoPak = localFont({
   variable: "--font-indopak",
 });
 
+const surahName = localFont({
+  src: "./fonts/surah-name-v2.ttf",
+  variable: "--font-surah-name",
+  display: "swap",
+});
+
 const kitabFont = localFont({
   src: [
     {
@@ -54,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${digitalKhatt.variable} ${indoPak.variable} ${kitabFont.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${digitalKhatt.variable} ${indoPak.variable} ${surahName.variable} ${kitabFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

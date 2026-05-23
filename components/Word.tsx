@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-export default function Word({ text, i }: { text: string; i: number }) {
+export default function Word({ text, key }: { text: string; key: number }) {
   const [isHoverTap, setHoverTap] = useState(false);
 
   function setHoverTapFalse() {
@@ -26,7 +26,7 @@ export default function Word({ text, i }: { text: string; i: number }) {
       onTapStart={() => setHoverTap(true)}
       onTap={setHoverTapFalse}
       onMouseLeave={setHoverTapFalse}
-      key={i}
+      key={key}
       className="border-app-foreground inline-block cursor-pointer border-b text-transparent"
     >
       {text}

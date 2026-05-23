@@ -1,7 +1,7 @@
 "use cache";
 
 import { fetchSurah } from "@/app/lib/data";
-import Word from "@/components/ui/Word";
+import Word from "@/components/Word";
 import { cacheLife } from "next/cache";
 
 export default async function Home({
@@ -13,9 +13,13 @@ export default async function Home({
 
   const { surah } = await params;
   const surahData = await fetchSurah(Number(surah));
+  const fNum = surahData?.number.toString().padStart(3, "0");
 
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center justify-center gap-10">
+      <div className="font-surah-name bg-app-secondary border-app-primary rounded-full border px-35 py-1 text-4xl md:text-5xl">
+        {"surah" + fNum}
+      </div>
       <div dir="rtl" className="font-indopak max-w-100">
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
@@ -25,7 +29,7 @@ export default async function Home({
                   lang="ar"
                 >
                   {ayah.text.split(" ").map((word, i) => (
-                    <Word text={word} i={i} />
+                    <Word text={word} key={i} />
                   ))}
                 </p>
                 <span className="px-2 text-center text-base">
