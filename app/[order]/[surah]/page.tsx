@@ -17,7 +17,7 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
-      <div className="font-surah-name bg-app-primary-darker border-app-primary rounded-full border px-35 py-1 text-4xl md:text-5xl">
+      <div className="font-surah-name bg-app-primary-darker border-app-primary rounded-full border px-35 py-1 text-5xl">
         {"surah" + fNum}
       </div>
       <div dir="rtl" className="font-indopak max-w-100">
