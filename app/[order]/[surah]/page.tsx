@@ -32,8 +32,8 @@ export default async function Home({
                     <Word text={word} key={i} />
                   ))}
                 </p>
-                <span className="px-2 text-center text-base">
-                  {ayah.numberInSurah}
+                <span className="font-digital-khatt px-2 text-center text-4xl">
+                  {"\u06DD" + ayah.numberInSurah.toLocaleString("ar-EG")}
                 </span>
                 <div></div>
               </div>
