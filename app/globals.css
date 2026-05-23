@@ -227,6 +227,7 @@
   --app-background: #202020;
   --app-foreground: #ededed;
   --app-primary: #e2be7f;
+  --app-primary-darker: #3a3020;
   --app-secondary: rgba(226, 190, 127, 0.3);
 }
 
@@ -234,6 +235,7 @@
   --color-app-background: var(--app-background);
   --color-app-foreground: var(--app-foreground);
   --color-app-primary: var(--app-primary);
+  --color-app-primary-darker: var(--app-primary-darker);
   --color-app-secondary: var(--app-secondary);
   --font-noto-arabic: var(--font-noto-arabic);
   --font-digital-khatt: var(--font-digital-khatt);
