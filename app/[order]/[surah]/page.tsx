@@ -20,23 +20,21 @@ export default async function Home({
       <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary rounded-xl border px-35 py-1 text-5xl">
         {"surah" + fNum}
       </div>
-      <div dir="rtl" className="font-indopak max-w-100">
+      <div
+        dir="rtl"
+        lang="ar"
+        className="font-indopak max-w-162 px-20 text-center"
+      >
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
-              <div key={i} className="flex flex-col items-center gap-5">
-                <p
-                  className="ml-5 flex flex-wrap justify-center gap-4 text-4xl/20"
-                  lang="ar"
-                >
-                  {ayah.text.split(" ").map((word, i) => (
-                    <Word text={word} key={i} />
-                  ))}
-                </p>
-                <span className="font-digital-khatt px-2 text-center text-4xl">
+              <span className="gap-2 text-4xl/20 *:ml-2" key={i}>
+                {ayah.text.split(" ").map((word, i) => (
+                  <Word text={word} key={i} />
+                ))}
+                <span className="font-digital-khatt px-2 align-middle text-4xl">
                   {"\u06DD" + ayah.numberInSurah.toLocaleString("ar-EG")}
                 </span>
-                <div></div>
-              </div>
+              </span>
             ))
           : null}
       </div>
