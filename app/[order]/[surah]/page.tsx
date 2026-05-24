@@ -17,14 +17,14 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
-      <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary rounded-xl border px-35 py-1 text-5xl">
-        {"surah" + fNum}
-      </div>
       <div
         dir="rtl"
         lang="ar"
-        className="font-indopak max-w-162 px-20 text-center"
+        className="font-indopak max-w-165 px-1 text-center"
       >
+        <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
+          {"surah" + fNum}
+        </div>
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
               <span className="gap-2 text-4xl/20 *:ml-2" key={i}>
