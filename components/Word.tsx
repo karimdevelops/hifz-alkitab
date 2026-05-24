@@ -8,7 +8,7 @@ export default function Word({ text, key }: { text: string; key: number }) {
   function setHoverTapFalse() {
     setTimeout(() => {
       setHoverTap(false);
-    }, 3000);
+    }, 5000);
   }
 
   return (
