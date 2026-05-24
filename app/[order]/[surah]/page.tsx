@@ -27,11 +27,14 @@ export default async function Home({
         </div>
         {surahData != null
           ? surahData.ayahs.map((ayah, i: number) => (
-              <span className="gap-2 text-4xl/20 *:ml-2" key={i}>
+              <span
+                className="gap-2 *:ml-2 *:text-3xl/20 *:md:text-4xl/20"
+                key={i}
+              >
                 {ayah.text.split(" ").map((word, i) => (
                   <Word text={word} key={i} />
                 ))}
-                <span className="font-digital-khatt px-2 align-middle text-4xl">
+                <span className="font-digital-khatt px-2 align-middle">
                   {"\u06DD" + ayah.numberInSurah.toLocaleString("ar-EG")}
                 </span>
               </span>
