@@ -1,3 +1,4 @@
+import Settings from "@/components/Settings";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import localFont from "next/font/local";
@@ -63,14 +64,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${notoArabic.variable} ${digitalKhatt.variable} ${indoPak.variable} ${surahName.variable} ${kitabFont.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col p-5 md:px-10">
-        <div className="flex justify-between">
-          <div>settings</div>
+      <body className="flex min-h-full flex-col">
+        <div className="flex justify-between p-5 md:px-10">
+          <Settings />
           <Link href="/" className="font-kitab text-3xl font-bold">
             حفظ
           </Link>
         </div>
-        {children}
+        <main className="px-1 md:px-10">{children}</main>
       </body>
     </html>
   );
