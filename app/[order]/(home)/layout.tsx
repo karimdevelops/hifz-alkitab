@@ -1,5 +1,4 @@
 import ChapterTab from "@/app/[order]/(home)/_components/ChapterTab";
-import Link from "next/link";
 import { Suspense } from "react";
 
 export default async function HomeLayout({
@@ -8,13 +7,10 @@ export default async function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex min-h-[90vh] flex-col gap-5 px-5 py-10 md:p-10">
-      <Link
-        href="/"
-        className="text-app-primary font-kitab self-center text-5xl font-bold"
-      >
+    <div className="flex flex-col gap-5">
+      <h1 className="text-app-primary font-kitab self-center text-5xl font-bold">
         حفظ
-      </Link>
+      </h1>
       <Suspense>
         <ChapterTab />
         <div>{children}</div>
