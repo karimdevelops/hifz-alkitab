@@ -2,14 +2,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@custom-variant light (&:is(.light *));
 @custom-variant dark (&:is(.dark *));
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #202020;
-    --foreground: #ededed;
-  }
-} */
 
 @theme inline {
   --font-heading: var(--font-sans);
@@ -223,13 +218,26 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-:root {
-  --app-background: #202020;
-  --app-foreground: #ededed;
-  --app-primary: #e2be7f;
-  --app-primary-darker: #3a3020;
-  --app-secondary: rgba(226, 190, 127, 0.3);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-background: #202020;
+    --app-foreground: #ededed;
+    --app-primary: #e2be7f;
+    --app-primary-darker: #3a3020;
+    --app-secondary: rgba(226, 190, 127, 0.3);
+  }
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --app-background: #ededed;
+    --app-foreground: #202020;
+    --app-primary: #e2be7f;
+    --app-primary-darker: #3a3020;
+    --app-secondary: rgba(226, 190, 127, 0.3);
+  }
+}
+
 
 @theme inline {
   --color-app-background: var(--app-background);
