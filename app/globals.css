@@ -89,6 +89,12 @@
 }
 
 :root {
+  --app-background: #ededed;
+  --app-foreground: #202020;
+  --app-primary: #c6a66f;
+  --app-primary-darker: #fff1d8;
+  --app-secondary: rgba(226, 190, 127, 0.3);
+
   --background: oklch(1 0 0);
 
   --foreground: oklch(0.145 0 0);
@@ -155,6 +161,11 @@
 }
 
 .dark {
+  --app-background: #202020;
+  --app-foreground: #ededed;
+  --app-primary: #e2be7f;
+  --app-primary-darker: #3a3020;
+  --app-secondary: rgba(226, 190, 127, 0.3);
   --background: oklch(0.145 0 0);
 
   --foreground: oklch(0.985 0 0);
@@ -217,27 +228,6 @@
 
   --sidebar-ring: oklch(0.556 0 0);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --app-background: #202020;
-    --app-foreground: #ededed;
-    --app-primary: #e2be7f;
-    --app-primary-darker: #3a3020;
-    --app-secondary: rgba(226, 190, 127, 0.3);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --app-background: #ededed;
-    --app-foreground: #202020;
-    --app-primary: #e2be7f;
-    --app-primary-darker: #3a3020;
-    --app-secondary: rgba(226, 190, 127, 0.3);
-  }
-}
-
 
 @theme inline {
   --color-app-background: var(--app-background);

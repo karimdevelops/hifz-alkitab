@@ -72,7 +72,6 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           themes={["light", "dark"]}
-          disableTransitionOnChange
         >
           <div className="flex justify-between p-5 md:px-10">
             <Settings />
