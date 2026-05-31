@@ -27,6 +27,7 @@ export default function Settings() {
         </DrawerHeader>
         <div className="flex justify-center gap-15 p-2">
           <button onClick={() => setTheme("light")}>Light</button>
+          <button onClick={() => setTheme("sepia")}>Sepia</button>
           <button onClick={() => setTheme("dark")}>Dark</button>
         </div>
       </DrawerContent>

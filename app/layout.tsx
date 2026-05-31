@@ -71,7 +71,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          themes={["light", "dark"]}
+          themes={["light", "sepia", "dark"]}
         >
           <div className="flex justify-between p-5 md:px-10">
             <Settings />
