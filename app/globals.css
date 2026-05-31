@@ -232,7 +232,7 @@
 .sepia {
   --app-background: oklch(0.9440 0.0278 88.7522);
   --app-foreground: oklch(0.3366 0.0362 71.1861);
-  --app-primary: #836e4a;
+  --app-primary: #5d4a2a;
   --app-primary-darker: #f0c999;
   --app-secondary: rgba(226, 190, 127, 1);
 

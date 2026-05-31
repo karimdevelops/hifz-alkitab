@@ -11,6 +11,7 @@ import {
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useTheme } from "next-themes";
@@ -26,6 +27,7 @@ export default function Settings() {
       <DrawerContent className="p-4">
         <DrawerHeader>
           <div className="flex items-center justify-between">
+            <DrawerTitle></DrawerTitle>
             <DrawerClose className="ml-auto">
               <Close />
             </DrawerClose>
