@@ -1,0 +1,19 @@
+export default function Sunset() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="2em"
+      height="2em"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="var(--app-foreground)"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3 13h1m16 0h1M5.6 6.6l.7.7m12.1-.7l-.7.7M8 13a4 4 0 1 1 8 0M3 17h18M7 20h5m4 0h1M12 5V4"
+      ></path>
+    </svg>
+  );
+}
