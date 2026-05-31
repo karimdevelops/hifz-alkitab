@@ -23,7 +23,7 @@ export default function Settings() {
       <DrawerTrigger>
         <Gear />
       </DrawerTrigger>
-      <DrawerContent className="p-4">
+      <DrawerContent className="md:p-4">
         <DrawerHeader>
           <div className="flex items-center justify-between">
             <DrawerClose className="ml-auto">
