@@ -23,7 +23,7 @@ export default function Settings() {
       <DrawerTrigger>
         <Gear />
       </DrawerTrigger>
-      <DrawerContent className="md:p-4">
+      <DrawerContent className="p-4">
         <DrawerHeader>
           <div className="flex items-center justify-between">
             <DrawerClose className="ml-auto">
@@ -34,7 +34,7 @@ export default function Settings() {
         </DrawerHeader>
         <div className="flex flex-col gap-2">
           <h3 className="text-base font-bold">Select theme</h3>
-          <div className="flex justify-center gap-5 *:flex *:items-center *:gap-2 *:rounded-full *:border-2 *:p-2">
+          <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:gap-2 *:rounded-full *:border-2 *:p-2">
             <button onClick={() => setTheme("light")}>
               <Sun />
               Light
