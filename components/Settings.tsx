@@ -1,5 +1,6 @@
 "use client";
 
+import Gear from "@/components/icons/Gear";
 import {
   Drawer,
   DrawerClose,
@@ -16,7 +17,9 @@ export default function Settings() {
 
   return (
     <Drawer direction="left">
-      <DrawerTrigger>Open</DrawerTrigger>
+      <DrawerTrigger>
+        <Gear />
+      </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <div className="flex items-center justify-between p-2">
