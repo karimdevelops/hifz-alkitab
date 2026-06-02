@@ -70,7 +70,7 @@ export default function Settings() {
                 <Medium />
                 Medium
               </button>
-              <button onClick={() => setFont("1.5rem")}>
+              <button onClick={() => setFont("1.35rem")}>
                 <Large />
                 Large
               </button>
