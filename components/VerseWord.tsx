@@ -2,7 +2,13 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-export default function Word({ text, key }: { text: string; key: number }) {
+export default function VerseWord({
+  text,
+  key,
+}: {
+  text: string;
+  key: number;
+}) {
   const [isHoverTap, setHoverTap] = useState(false);
 
   function setHoverTapFalse() {

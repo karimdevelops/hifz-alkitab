@@ -1,19 +1,15 @@
-"use cache";
-
 import { fetchSurah } from "@/app/lib/data";
-import Word from "@/components/Word";
-import { cacheLife } from "next/cache";
+import { Verse, Word } from "@/app/lib/definitions";
+import VerseWord from "@/components/VerseWord";
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ surah: number }>;
+  params: Promise<{ surah: string }>;
 }) {
-  cacheLife("max");
-
   const { surah } = await params;
   const surahData = await fetchSurah(Number(surah));
-  const fNum = surahData?.number.toString().padStart(3, "0");
+  const fNum = surahData?.id.toString().padStart(3, "0");
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
@@ -27,17 +23,14 @@ export default async function Home({
         </div>
         <div>
           {surahData != null
-            ? surahData.ayahs.map((ayah, i: number) => (
+            ? surahData.verses.map((verse: Verse, i: number) => (
                 <span
-                  className="gap-2 *:ml-2 *:text-3xl/20 *:md:text-4xl/20"
+                  className="gap-5 *:ml-3 *:text-3xl/20 *:md:text-4xl/20"
                   key={i}
                 >
-                  {ayah.text.split(" ").map((word, i) => (
-                    <Word text={word} key={i} />
+                  {verse.words.map((word: Word, j: number) => (
+                    <VerseWord key={j} text={word.text_indopak} />
                   ))}
-                  <span className="font-digital-khatt px-2 align-middle">
-                    {"\u06DD" + ayah.numberInSurah.toLocaleString("ar-EG")}
-                  </span>
                 </span>
               ))
             : null}
