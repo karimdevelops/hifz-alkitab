@@ -15,8 +15,17 @@ export default async function Home({
 }: {
   params: Promise<{ order: string; surah: string }>;
 }) {
-  const { surah } = await params;
-  const surahData = await fetchSurah(Number(surah));
+  const { surah, order } = await params;
+  const reveal = order === "revelation-order";
+  let surahId: number;
+  if (reveal) {
+    const chapters = await fetchChapters(true);
+    surahId = chapters[Number(surah) - 1].id;
+  } else {
+    surahId = Number(surah);
+  }
+
+  const surahData = await fetchSurah(surahId);
   const fNum = surahData?.id.toString().padStart(3, "0");
 
   return (

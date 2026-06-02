@@ -17,7 +17,7 @@ export default function ChapterLink({
 
   return (
     <Link
-      href={pathname + "/" + chap.id}
+      href={pathname + "/" + (i + 1)}
       className="border-app-secondary hover:border-app-primary flex gap-5 rounded-xl border-2 px-5 py-3 transition-all hover:cursor-pointer [&>div]:flex [&>div]:flex-col [&>div]:justify-center [&>div]:gap-2"
     >
       <div>
