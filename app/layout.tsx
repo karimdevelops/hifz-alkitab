@@ -1,3 +1,4 @@
+import { DialogApi } from "@/components/DialogApi";
 import Settings from "@/components/Settings";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -79,6 +80,7 @@ export default function RootLayout({
               حفظ
             </Link>
           </div>
+          <DialogApi />
           <main className="px-1 md:px-10">{children}</main>
         </ThemeProvider>
       </body>

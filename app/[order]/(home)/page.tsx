@@ -1,8 +1,5 @@
-"use cache";
-
 import ChapterLink from "@/app/[order]/(home)/_components/ChapterLink";
 import { fetchChapters } from "@/app/lib/data";
-import { cacheLife } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -14,8 +11,6 @@ export default async function Home({
 }: {
   params: Promise<{ order: string }>;
 }) {
-  cacheLife("max");
-
   let chaps;
   let reveal: boolean;
   const { order } = await params;

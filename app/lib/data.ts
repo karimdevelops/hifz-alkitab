@@ -12,7 +12,6 @@ export async function fetchChapters(reveal: boolean): Promise<Chapter[]> {
 
     if (reveal) allChaps = await fetch(CHAPTERS_REVEAL_API_URL);
     const chapsData = await allChaps.json();
-
     const fChapsData = chapsData.data.map((chap: Chapter) => {
       return {
         name: chap.name.replace("سورة", ""),
