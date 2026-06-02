@@ -79,7 +79,7 @@ export default function RootLayout({
               حفظ
             </Link>
           </div>
-          <main className="px-1 md:px-10">{children}</main>
+          <main className="px-2 md:px-10">{children}</main>
         </ThemeProvider>
       </body>
     </html>
