@@ -52,7 +52,7 @@ export async function fetchSurah(number: number): Promise<Surah | null> {
 
     const metaData = await metaRes.json();
     const verseData = await verseRes.json();
-    console.log(verseData.verses);
+
     return {
       ...metaData.chapter,
       verses: verseData.verses,
