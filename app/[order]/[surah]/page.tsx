@@ -1,11 +1,19 @@
-import { fetchSurah } from "@/app/lib/data";
+import { fetchChapters, fetchSurah } from "@/app/lib/data";
 import { Verse, Word } from "@/app/lib/definitions";
 import VerseWord from "@/components/VerseWord";
+
+export async function generateStaticParams() {
+  const chapters = await fetchChapters(false);
+  return chapters.flatMap((chap) => [
+    { order: "surah", surah: chap.id.toString() },
+    { order: "revelation-order", surah: chap.id.toString() },
+  ]);
+}
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ surah: string }>;
+  params: Promise<{ order: string; surah: string }>;
 }) {
   const { surah } = await params;
   const surahData = await fetchSurah(Number(surah));
