@@ -38,6 +38,11 @@ export default async function Home({
         <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
           {"surah" + fNum}
         </div>
+        {surahData?.bismillah_pre ? (
+          <div className="text-3xl">بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ</div>
+        ) : (
+          ""
+        )}
         <div>
           {surahData != null
             ? surahData.verses.map((verse: Verse, i: number) => (
