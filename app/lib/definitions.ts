@@ -28,7 +28,7 @@ export interface Word {
 }
 
 export interface Verse {
-  id: number;
+  verse_number: number;
   words: Word[];
 }
 

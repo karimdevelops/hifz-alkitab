@@ -33,7 +33,7 @@ export default async function Home({
       <div
         dir="rtl"
         lang="ar"
-        className="font-indopak flex max-w-165 flex-col gap-10 px-1 text-center"
+        className="font-indopak flex max-w-155 flex-col gap-10 px-1 text-center"
       >
         <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
           {"surah" + fNum}
@@ -48,6 +48,9 @@ export default async function Home({
                   {verse.words.map((word: Word, j: number) => (
                     <VerseWord key={j} text={word.text_indopak} />
                   ))}
+                  <span className="font-digital-khatt px-2 align-middle">
+                    {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
+                  </span>
                 </span>
               ))
             : null}
