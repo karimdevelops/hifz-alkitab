@@ -14,9 +14,9 @@ export async function fetchChapters(reveal: boolean): Promise<Chapter[]> {
     const chapsData = await allChaps.json();
     const fChapsData = chapsData.data.map((chap: Chapter) => {
       return {
-        name: chap.name.replace("سورة", ""),
+        name: chap.name == null ? "null" : chap.name.replace("سورة", ""),
         number: chap.number,
-        englishName: chap.englishName,
+        englishName: chap.englishName == null ? "null" : chap.englishName,
         englishNameTranslation: chap.englishNameTranslation,
         numberOfAyahs: chap.numberOfAyahs,
       };
