@@ -94,6 +94,7 @@
   --app-primary: #be995a;
   --app-primary-darker: #fff1d8;
   --app-secondary: rgba(226, 190, 127, 0.3);
+  --app-font-size: 1rem;
 
   --background: oklch(1 0 0);
 
@@ -317,5 +318,7 @@
 
   html {
     @apply font-noto-arabic;
+    font-size: var(--app-font-size);
+    transition: all 0.2s ease-in;
   }
 }
