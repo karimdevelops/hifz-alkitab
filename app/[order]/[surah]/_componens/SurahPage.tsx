@@ -8,7 +8,7 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
   const { displayMode } = useDisplay();
   if (displayMode == "linebyline" || displayMode == "hifzlinebyline")
     return (
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-10 md:gap-20">
         {surahData != null
           ? surahData.verses.map((verse: Verse, i: number) => (
               <div className="border-b-2" key={i}>
