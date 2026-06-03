@@ -21,7 +21,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { useDisplay } from "@/context/DisplayContext";
+import { DisplayMode, useDisplay } from "@/context/DisplayContext";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -30,11 +30,31 @@ export default function Settings() {
   const [fontSize, setFontSize] = useState("1rem");
   const { displayMode, setDisplayMode } = useDisplay();
 
-  useEffect(
-    () =>
-      document.documentElement.style.setProperty("--app-font-size", fontSize),
-    [fontSize],
-  );
+  useEffect(() => {
+    document.documentElement.style.setProperty("--app-font-size", fontSize);
+  }, [fontSize]);
+
+  const activeClass = (isActive: boolean) =>
+    isActive ? "text-app-background bg-app-primary" : "";
+
+  const themes = [
+    { id: "light", label: "Light", icon: <Sun /> },
+    { id: "sepia", label: "Sepia", icon: <Sunset /> },
+    { id: "dark", label: "Dark", icon: <Moon /> },
+  ];
+
+  const fontSizes = [
+    { size: "1rem", label: "Small", icon: <Small /> },
+    { size: "1.2rem", label: "Medium", icon: <Medium /> },
+    { size: "1.35rem", label: "Large", icon: <Large /> },
+  ];
+
+  const modes = [
+    { id: "linebyline", icon: <List /> },
+    { id: "hifzlinebyline", icon: <MenuBook /> },
+    { id: "reading", icon: <Autostories /> },
+    { id: "hifzreading", icon: <Book /> },
+  ];
 
   return (
     <Drawer direction="left">
@@ -44,93 +64,54 @@ export default function Settings() {
       <DrawerContent className="p-4">
         <DrawerHeader>
           <div className="flex items-center justify-between">
-            <DrawerTitle></DrawerTitle>
+            <DrawerTitle />
             <DrawerClose className="ml-auto">
               <Close />
             </DrawerClose>
           </div>
-          <DrawerDescription></DrawerDescription>
+          <DrawerDescription />
         </DrawerHeader>
         <div className="flex flex-col gap-10 *:flex *:flex-col *:gap-5">
           <div>
             <h3 className="text-base font-bold">Appearance</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:gap-2 *:rounded-full *:border-2 *:p-2">
-              <button
-                className={`${theme == "light" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setTheme("light")}
-              >
-                <Sun />
-                Light
-              </button>
-              <button
-                className={`${theme == "sepia" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setTheme("sepia")}
-              >
-                <Sunset />
-                Sepia
-              </button>
-              <button
-                className={`${theme == "dark" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setTheme("dark")}
-              >
-                <Moon />
-                Dark
-              </button>
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  className={activeClass(theme === t.id)}
+                  onClick={() => setTheme(t.id)}
+                >
+                  {t.icon} {t.label}
+                </button>
+              ))}
             </div>
           </div>
           <div>
             <h3 className="text-base font-bold">Font Size</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:rounded-full *:border-2 *:p-2">
-              <button
-                className={`${fontSize == "1rem" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setFontSize("1rem")}
-              >
-                <Small />
-                Small
-              </button>
-              <button
-                className={`${fontSize == "1.2rem" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setFontSize("1.2rem")}
-              >
-                <Medium />
-                Medium
-              </button>
-              <button
-                className={`${fontSize == "1.35rem" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setFontSize("1.35rem")}
-              >
-                <Large />
-                Large
-              </button>
+              {fontSizes.map((f) => (
+                <button
+                  key={f.size}
+                  className={activeClass(fontSize === f.size)}
+                  onClick={() => setFontSize(f.size)}
+                >
+                  {f.icon} {f.label}
+                </button>
+              ))}
             </div>
           </div>
           <div>
             <h3 className="text-base font-bold">Display Mode</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:rounded-full *:border-2 *:p-3">
-              <button
-                className={`${displayMode == "linebyline" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setDisplayMode("linebyline")}
-              >
-                <List />
-              </button>
-              <button
-                className={`${displayMode == "hifzlinebyline" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setDisplayMode("hifzlinebyline")}
-              >
-                <MenuBook />
-              </button>
-              <button
-                className={`${displayMode == "reading" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setDisplayMode("reading")}
-              >
-                <Autostories />
-              </button>
-              <button
-                className={`${displayMode == "hifzreading" ? "text-app-background bg-app-primary" : ""}`}
-                onClick={() => setDisplayMode("hifzreading")}
-              >
-                <Book />
-              </button>
+              {modes.map((m) => (
+                <button
+                  key={m.id}
+                  className={activeClass(displayMode === m.id)}
+                  onClick={() => setDisplayMode(m.id as DisplayMode)}
+                >
+                  {m.icon}
+                </button>
+              ))}
             </div>
           </div>
         </div>
