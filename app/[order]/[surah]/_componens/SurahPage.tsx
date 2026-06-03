@@ -12,18 +12,20 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
         {surahData != null
           ? surahData.verses.map((verse: Verse, i: number) => (
               <div className="border-b-2" key={i}>
-                <div className="*:mx-2 *:inline-block *:text-4xl/20 *:md:text-5xl/20">
-                  {verse.words.map((word: Word, j: number) => (
-                    <VerseWord
-                      key={j}
-                      hifz={displayMode == "linebyline" ? false : true}
-                      text={word.text_indopak}
-                    />
-                  ))}
-                  <span className="font-digital-khatt px-2 align-middle">
+                <span>
+                  <span className="*:mx-2 *:inline-block *:text-4xl/20 *:md:text-5xl/20">
+                    {verse.words.map((word: Word, j: number) => (
+                      <VerseWord
+                        key={j}
+                        hifz={displayMode == "linebyline" ? false : true}
+                        text={word.text_indopak}
+                      />
+                    ))}
+                  </span>
+                  <span className="font-digital-khatt -mr-5 px-2 align-middle text-3xl md:text-4xl">
                     {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
                   </span>
-                </div>
+                </span>
                 <div dir="ltr" className="py-4 font-sans text-2xl! *:mx-1">
                   {verse.words.map((word: Word, j: number) => (
                     <VerseWord
@@ -40,21 +42,20 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
     );
   else if (displayMode == "reading" || displayMode == "hifzreading")
     return (
-      <div className="max-w-165 text-center">
+      <div className="max-w-145 text-center">
         {surahData != null
           ? surahData.verses.map((verse: Verse, i: number) => (
-              <span
-                className="*:mx-2 *:inline-block *:text-3xl/20 *:md:text-4xl/20"
-                key={i}
-              >
-                {verse.words.map((word: Word, j: number) => (
-                  <VerseWord
-                    key={j}
-                    hifz={displayMode == "reading" ? false : true}
-                    text={word.text_indopak}
-                  />
-                ))}
-                <span className="font-digital-khatt px-2 align-middle">
+              <span key={i}>
+                <span className="*:mx-2 *:inline-block *:text-3xl/20 *:md:text-4xl/20">
+                  {verse.words.map((word: Word, j: number) => (
+                    <VerseWord
+                      key={j}
+                      hifz={displayMode == "reading" ? false : true}
+                      text={word.text_indopak}
+                    />
+                  ))}
+                </span>
+                <span className="font-digital-khatt -mr-5 px-2 align-middle text-3xl md:text-4xl">
                   {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
                 </span>
               </span>
