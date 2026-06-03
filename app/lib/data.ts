@@ -45,16 +45,16 @@ export async function fetchSurah(number: number): Promise<Surah | null> {
     const [metaRes, verseRes] = await Promise.all([
       fetch(`${CHAPTERS_API_URL}/${number}`, { next: { revalidate: false } }),
       fetch(
-        `${SURAH_API_URL}${number}?language=ar&words=true&word_fields=text_indopak&per_page=all`,
+        // `${SURAH_API_URL}${number}?language=ar&words=true&word_fields=text_indopak&per_page=all`,
+        `${SURAH_API_URL}/${number}`,
         { next: { revalidate: false } },
       ),
     ]);
-
     const metaData = await metaRes.json();
     const verseData = await verseRes.json();
 
     return {
-      ...metaData.chapter,
+      ...metaData,
       verses: verseData.verses,
     };
   } catch (e) {

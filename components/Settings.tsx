@@ -1,9 +1,13 @@
 "use client";
 
+import Autostories from "@/components/icons/Autostories";
+import Book from "@/components/icons/Book";
 import Close from "@/components/icons/Close";
 import Gear from "@/components/icons/Gear";
 import Large from "@/components/icons/Large";
+import List from "@/components/icons/List";
 import Medium from "@/components/icons/Medium";
+import MenuBook from "@/components/icons/MenuBook";
 import Moon from "@/components/icons/Moon";
 import Small from "@/components/icons/Small";
 import Sun from "@/components/icons/Sun";
@@ -81,16 +85,16 @@ export default function Settings() {
             <h3 className="text-base font-bold">Display Mode</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:rounded-full *:border-2 *:p-3">
               <button onClick={() => setDisplayMode("linebyline")}>
-                Norm Line by Line
-              </button>
-              <button onClick={() => setDisplayMode("reading")}>
-                Norm Reading
+                <List />
               </button>
               <button onClick={() => setDisplayMode("hifzlinebyline")}>
-                Hifz Line By Line
+                <MenuBook />
+              </button>
+              <button onClick={() => setDisplayMode("reading")}>
+                <Autostories />
               </button>
               <button onClick={() => setDisplayMode("hifzreading")}>
-                Hifz Reading
+                <Book />
               </button>
             </div>
           </div>
