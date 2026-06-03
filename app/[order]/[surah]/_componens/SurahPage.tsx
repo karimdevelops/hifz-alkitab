@@ -13,7 +13,7 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
           ? surahData.verses.map((verse: Verse, i: number) => (
               <div className="flex flex-col gap-10 border-b-2" key={i}>
                 <span>
-                  <span className="*:mx-2 *:inline-block *:text-4xl/20 *:md:text-5xl/20">
+                  <span className="*:mx-2 *:inline-block *:text-4xl/30 *:md:text-5xl/30">
                     {verse.words.map((word: Word, j: number) => (
                       <VerseWord
                         key={j}
