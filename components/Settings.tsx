@@ -23,13 +23,18 @@ import {
 } from "@/components/ui/drawer";
 import { useDisplay } from "@/context/DisplayContext";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Settings() {
   const { theme, setTheme } = useTheme();
+  const [fontSize, setFontSize] = useState("1rem");
   const { displayMode, setDisplayMode } = useDisplay();
-  function setFont(size: string) {
-    document.documentElement.style.setProperty("--app-font-size", size);
-  }
+
+  useEffect(
+    () =>
+      document.documentElement.style.setProperty("--app-font-size", fontSize),
+    [fontSize],
+  );
 
   return (
     <Drawer direction="left">
@@ -50,15 +55,24 @@ export default function Settings() {
           <div>
             <h3 className="text-base font-bold">Appearance</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:gap-2 *:rounded-full *:border-2 *:p-2">
-              <button onClick={() => setTheme("light")}>
+              <button
+                className={`${theme == "light" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setTheme("light")}
+              >
                 <Sun />
                 Light
               </button>
-              <button onClick={() => setTheme("sepia")}>
+              <button
+                className={`${theme == "sepia" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setTheme("sepia")}
+              >
                 <Sunset />
                 Sepia
               </button>
-              <button onClick={() => setTheme("dark")}>
+              <button
+                className={`${theme == "dark" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setTheme("dark")}
+              >
                 <Moon />
                 Dark
               </button>
@@ -67,15 +81,24 @@ export default function Settings() {
           <div>
             <h3 className="text-base font-bold">Font Size</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:rounded-full *:border-2 *:p-2">
-              <button onClick={() => setFont("1rem")}>
+              <button
+                className={`${fontSize == "1rem" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setFontSize("1rem")}
+              >
                 <Small />
                 Small
               </button>
-              <button onClick={() => setFont("1.2rem")}>
+              <button
+                className={`${fontSize == "1.2rem" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setFontSize("1.2rem")}
+              >
                 <Medium />
                 Medium
               </button>
-              <button onClick={() => setFont("1.35rem")}>
+              <button
+                className={`${fontSize == "1.35rem" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setFontSize("1.35rem")}
+              >
                 <Large />
                 Large
               </button>
@@ -84,16 +107,28 @@ export default function Settings() {
           <div>
             <h3 className="text-base font-bold">Display Mode</h3>
             <div className="flex flex-wrap justify-center gap-5 *:flex *:items-center *:rounded-full *:border-2 *:p-3">
-              <button onClick={() => setDisplayMode("linebyline")}>
+              <button
+                className={`${displayMode == "linebyline" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setDisplayMode("linebyline")}
+              >
                 <List />
               </button>
-              <button onClick={() => setDisplayMode("hifzlinebyline")}>
+              <button
+                className={`${displayMode == "hifzlinebyline" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setDisplayMode("hifzlinebyline")}
+              >
                 <MenuBook />
               </button>
-              <button onClick={() => setDisplayMode("reading")}>
+              <button
+                className={`${displayMode == "reading" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setDisplayMode("reading")}
+              >
                 <Autostories />
               </button>
-              <button onClick={() => setDisplayMode("hifzreading")}>
+              <button
+                className={`${displayMode == "hifzreading" ? "text-app-background bg-app-primary" : ""}`}
+                onClick={() => setDisplayMode("hifzreading")}
+              >
                 <Book />
               </button>
             </div>
