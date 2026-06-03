@@ -1,6 +1,5 @@
+import SurahPage from "@/app/[order]/[surah]/_componens/SurahPage";
 import { fetchChapters, fetchSurah } from "@/app/lib/data";
-import { Verse, Word } from "@/app/lib/definitions";
-import VerseWord from "@/components/VerseWord";
 
 export async function generateStaticParams() {
   const chapters = await fetchChapters(false);
@@ -17,6 +16,7 @@ export default async function Home({
 }) {
   const { surah, order } = await params;
   const reveal = order === "revelation-order";
+
   let surahId: number;
   if (reveal) {
     const chapters = await fetchChapters(true);
@@ -33,7 +33,7 @@ export default async function Home({
       <div
         dir="rtl"
         lang="ar"
-        className="font-indopak flex max-w-155 flex-col gap-10 px-1 text-center"
+        className="font-indopak flex max-w-165 flex-col gap-10 px-1 text-center tracking-wide"
       >
         <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
           {"surah" + fNum}
@@ -43,23 +43,7 @@ export default async function Home({
         ) : (
           ""
         )}
-        <div>
-          {surahData != null
-            ? surahData.verses.map((verse: Verse, i: number) => (
-                <span
-                  className="gap-5 *:ml-3 *:text-3xl/20 *:md:text-4xl/20"
-                  key={i}
-                >
-                  {verse.words.map((word: Word, j: number) => (
-                    <VerseWord key={j} text={word.text_indopak} />
-                  ))}
-                  <span className="font-digital-khatt px-2 align-middle">
-                    {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
-                  </span>
-                </span>
-              ))
-            : null}
-        </div>
+        {surahData ? <SurahPage surahData={surahData} /> : null}
       </div>
     </div>
   );

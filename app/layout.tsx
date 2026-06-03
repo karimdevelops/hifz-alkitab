@@ -1,4 +1,5 @@
 import Settings from "@/components/Settings";
+import { DisplayProvider } from "@/context/DisplayContext";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
@@ -73,13 +74,15 @@ export default function RootLayout({
           enableSystem
           themes={["light", "sepia", "dark"]}
         >
-          <div className="flex justify-between p-5 md:px-10">
-            <Settings />
-            <Link href="/" className="font-kitab text-3xl font-bold">
-              حفظ
-            </Link>
-          </div>
-          <main className="px-2 md:px-10">{children}</main>
+          <DisplayProvider>
+            <div className="flex justify-between p-5 md:px-10">
+              <Settings />
+              <Link href="/" className="font-kitab text-3xl font-bold">
+                حفظ
+              </Link>
+            </div>
+            <main className="px-2 md:px-10">{children}</main>
+          </DisplayProvider>
         </ThemeProvider>
       </body>
     </html>
