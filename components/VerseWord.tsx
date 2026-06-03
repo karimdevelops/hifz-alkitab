@@ -2,7 +2,13 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-export default function VerseWord({ text }: { text: string }) {
+export default function VerseWord({
+  text,
+  hifz,
+}: {
+  text: string;
+  hifz: boolean;
+}) {
   const [isHoverTap, setHoverTap] = useState(false);
 
   function setHoverTapFalse() {
@@ -11,24 +17,26 @@ export default function VerseWord({ text }: { text: string }) {
     }, 5000);
   }
 
-  return (
-    <motion.span
-      animate={
-        isHoverTap
-          ? {
-              color: "var(--app-foreground)",
-              translateY: -5,
-              borderColor: "var(--app-primary)",
-            }
-          : {}
-      }
-      onMouseEnter={() => setHoverTap(true)}
-      onTapStart={() => setHoverTap(true)}
-      onTap={setHoverTapFalse}
-      onMouseLeave={setHoverTapFalse}
-      className="border-app-foreground inline-block cursor-pointer border-b text-transparent"
-    >
-      {text}
-    </motion.span>
-  );
+  if (hifz)
+    return (
+      <motion.span
+        animate={
+          isHoverTap
+            ? {
+                color: "var(--app-foreground)",
+                translateY: -5,
+                borderColor: "var(--app-primary)",
+              }
+            : {}
+        }
+        onMouseEnter={() => setHoverTap(true)}
+        onTapStart={() => setHoverTap(true)}
+        onTap={setHoverTapFalse}
+        onMouseLeave={setHoverTapFalse}
+        className="border-app-foreground inline-block cursor-pointer border-b text-transparent"
+      >
+        {text}
+      </motion.span>
+    );
+  else return <span className="inline-block cursor-pointer">{text}</span>;
 }

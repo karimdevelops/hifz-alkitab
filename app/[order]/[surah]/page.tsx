@@ -33,13 +33,15 @@ export default async function Home({
       <div
         dir="rtl"
         lang="ar"
-        className="font-indopak flex max-w-165 flex-col gap-10 px-1 text-center tracking-wide"
+        className="font-indopak flex flex-col gap-10 px-1 tracking-wide"
       >
         <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
           {"surah" + fNum}
         </div>
         {surahData?.bismillah_pre ? (
-          <div className="text-3xl">بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ</div>
+          <div className="text-center text-3xl">
+            بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ
+          </div>
         ) : (
           ""
         )}
