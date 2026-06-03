@@ -38,7 +38,7 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
           : null}
       </div>
     );
-  else if (displayMode == "hifzreading")
+  else if (displayMode == "reading" || displayMode == "hifzreading")
     return (
       <div className="max-w-165">
         {surahData != null
@@ -48,7 +48,11 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
                 key={i}
               >
                 {verse.words.map((word: Word, j: number) => (
-                  <VerseWord key={j} hifz={true} text={word.text_indopak} />
+                  <VerseWord
+                    key={j}
+                    hifz={displayMode == "reading" ? false : true}
+                    text={word.text_indopak}
+                  />
                 ))}
                 <span className="font-digital-khatt px-2 align-middle">
                   {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
