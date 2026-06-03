@@ -2,13 +2,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-export default function VerseWord({
-  text,
-  key,
-}: {
-  text: string;
-  key: number;
-}) {
+export default function VerseWord({ text }: { text: string }) {
   const [isHoverTap, setHoverTap] = useState(false);
 
   function setHoverTapFalse() {
@@ -32,7 +26,6 @@ export default function VerseWord({
       onTapStart={() => setHoverTap(true)}
       onTap={setHoverTapFalse}
       onMouseLeave={setHoverTapFalse}
-      key={key}
       className="border-app-foreground inline-block cursor-pointer border-b text-transparent"
     >
       {text}
