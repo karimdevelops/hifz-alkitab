@@ -6,7 +6,7 @@ import { useDisplay } from "@/context/DisplayContext";
 
 export default function SurahPage({ surahData }: { surahData: Surah }) {
   const { displayMode } = useDisplay();
-  if (displayMode == "linebyline")
+  if (displayMode == "linebyline" || displayMode == "hifzlinebyline")
     return (
       <div className="flex flex-col gap-20">
         {surahData != null
@@ -14,7 +14,11 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
               <div className="border-b-2" key={i}>
                 <div className="*:mx-2 *:inline-block *:text-4xl/20 *:md:text-5xl/20">
                   {verse.words.map((word: Word, j: number) => (
-                    <VerseWord key={j} hifz={false} text={word.text_indopak} />
+                    <VerseWord
+                      key={j}
+                      hifz={displayMode == "linebyline" ? false : true}
+                      text={word.text_indopak}
+                    />
                   ))}
                   <span className="font-digital-khatt px-2 align-middle">
                     {"\u06DD" + verse.verse_number.toLocaleString("ar-EG")}
