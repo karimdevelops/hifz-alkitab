@@ -40,7 +40,7 @@ export default function SurahPage({ surahData }: { surahData: Surah }) {
     );
   else if (displayMode == "reading" || displayMode == "hifzreading")
     return (
-      <div className="max-w-165">
+      <div className="max-w-165 text-center">
         {surahData != null
           ? surahData.verses.map((verse: Verse, i: number) => (
               <span
