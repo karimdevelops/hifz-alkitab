@@ -33,7 +33,7 @@ export default async function Home({
       <div
         dir="rtl"
         lang="ar"
-        className="font-indopak flex flex-col gap-10 px-1 tracking-wide"
+        className="font-kitab flex flex-col gap-10 px-1 tracking-wide"
       >
         <div className="font-surah-name text-app-primary bg-app-primary-darker border-app-primary min-w-max rounded-xl border py-1 text-center text-5xl">
           {"surah" + fNum}
