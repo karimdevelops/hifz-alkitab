@@ -1,3 +1,4 @@
+import AuthLinks from "@/components/AuthLinks";
 import Settings from "@/components/Settings";
 import { DisplayProvider } from "@/context/DisplayContext";
 import type { Metadata } from "next";
@@ -76,7 +77,10 @@ export default function RootLayout({
         >
           <DisplayProvider>
             <div className="flex justify-between p-5 md:px-10">
-              <Settings />
+              <div className="flex items-center gap-5">
+                <Settings />
+                <AuthLinks />
+              </div>
               <Link href="/" className="font-kitab text-3xl font-bold">
                 حفظ
               </Link>
