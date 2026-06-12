@@ -33,8 +33,6 @@ Offering more than just Quran text. It aids users with memorization of the Quran
 Here's what makes it different: 
 
 - Reveal words on hover/click
-- Reveal entire ayah on click
-- Recite audio
 - UI customization available
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -82,8 +80,13 @@ To get a local copy up and running, then follow these simple steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## TODO
+- Reveal entire ayah on click
+- Recite audio
+
 ## Acknowledgments
 
+* [Quran.com API](https://quran.com/developers) 
 * [Misraj](https://misraj.ai/) 
 * [Quranic Universal Library](https://github.com/TarteelAI/quranic-universal-library)
 * [The Quran Project](https://github.com/The-Quran-Project/Quran-API)
